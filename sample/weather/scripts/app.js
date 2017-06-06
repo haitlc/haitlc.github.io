@@ -119,6 +119,7 @@
     card.querySelector('.current .icon').classList.add(app.getIconClass(current.code));
     card.querySelector('.current .temperature .value').textContent =
       Math.round(current.temp);
+
     card.querySelector('.current .sunrise').textContent = sunrise;
     card.querySelector('.current .sunset').textContent = sunset;
     card.querySelector('.current .humidity').textContent =
@@ -295,7 +296,7 @@
   var initialWeatherForecast = {
     key: '2165352',
     label: 'Hong Kong, HK',
-    created: '2017-06-06T17:00:00Z',
+    created: '2017-06-06T09:00:00Z',
     channel: {
       astronomy: {
         sunrise: "5:39 am",
@@ -303,9 +304,9 @@
       },
       item: {
         condition: {
-          text: "Very hot",
-          date: "Tue, 06 Jun 2017 05:24 PM HKT",
-          temp: 31,
+          text: "Thunderstorms",
+          date: "Tue, 06 Jun 2017 05:00 PM HKT",
+          temp: 30,
           code: 4
         },
         forecast: [
@@ -319,11 +320,11 @@
         ]
       },
       atmosphere: {
-        humidity: 56
+        humidity: 76
       },
       wind: {
-        speed: 25,
-        direction: 195
+        speed: 17.70,
+        direction: 150
       }
     }
   };
