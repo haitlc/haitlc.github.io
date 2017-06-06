@@ -165,7 +165,7 @@
    * freshest data.
    */
   app.getForecast = function(key, label) {
-    var statement = 'select * from weather.forecast where woeid=' + key;
+    var statement = 'select * from weather.forecast where woeid=' + key + ' and u="c"';
     var url = 'https://query.yahooapis.com/v1/public/yql?format=json&q=' +
         statement;
     // TODO add cache logic here
@@ -293,29 +293,29 @@
    * discussion.
    */
   var initialWeatherForecast = {
-    key: '2459115',
-    label: 'New York, NY',
-    created: '2016-07-22T01:00:00Z',
+    key: '2165352',
+    label: 'Hong Kong, HK',
+    created: '2017-06-06T17:00:00Z',
     channel: {
       astronomy: {
-        sunrise: "5:43 am",
-        sunset: "8:21 pm"
+        sunrise: "5:39 am",
+        sunset: "7:6 pm"
       },
       item: {
         condition: {
-          text: "Windy",
-          date: "Thu, 21 Jul 2016 09:00 PM EDT",
-          temp: 56,
-          code: 24
+          text: "Very hot",
+          date: "Tue, 06 Jun 2017 05:24 PM HKT",
+          temp: 31,
+          code: 4
         },
         forecast: [
-          {code: 44, high: 86, low: 70},
-          {code: 44, high: 94, low: 73},
-          {code: 4, high: 95, low: 78},
-          {code: 24, high: 75, low: 89},
-          {code: 24, high: 89, low: 77},
-          {code: 44, high: 92, low: 79},
-          {code: 44, high: 89, low: 77}
+          {code: 4, high: 31, low: 28},
+          {code: 4, high: 30, low: 28},
+          {code: 4, high: 30, low: 27},
+          {code: 4, high: 30, low: 27},
+          {code: 4, high: 30, low: 28},
+          {code: 47, high: 30, low: 28},
+          {code: 4, high: 30, low: 28}
         ]
       },
       atmosphere: {
