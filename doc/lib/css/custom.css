@@ -1,0 +1,211 @@
+
+/* Customization */
+
+/* Heading */
+.mdl-layout-title.mdl-layout__header-row a{
+    color:rgb(255,255,255) !important;
+    text-decoration: none !important;
+}
+
+
+
+/* Drawer Menu */
+/* Drawer Menu heading */
+.mdl-layout-title a{
+    text-decoration: none !important;
+    color: rgb(66, 66, 66);
+
+}
+
+/* Drawer Menu item padding */
+
+.mdl-navigation__link {
+  padding-top: 4px !important;
+  padding-bottom: 4px !important;
+}
+
+.mdl-navigation__link.second_lv {
+  padding-left: 60px !important;
+  padding-right: 20px !important;
+}
+
+
+.mdl-navigation__link.third_lv {
+  padding-left: 80px !important;
+  padding-right: 0px !important;
+}
+
+/* Drawer Menu width */
+.mdl-layout__drawer {
+  width: 300px;
+  left: -250px; /* Default width= 250px -> use to hide drawer when it is closed*/
+  overflow-x: hidden;
+}
+
+.mdl-layout__drawer.is-visible {
+  left: 0;    /* Default width= 250px -> make it visible when it is opened*/
+}
+
+/* Menu style copy from official page */
+.mdl-components .mdl-components__link {
+    margin: 16px;
+    font-weight: 400;
+    color: rgba(0,0,0,.66);
+    position: relative;
+    padding-left: 72px;
+    min-height: 48px;
+    display: table;
+    line-height: 48px;
+}  
+.mdl-components .mdl-components__nav {
+    display: inline-block;
+    background: #fff;
+    width: 300px;
+    box-sizing: border-box;
+    padding: 24px 0;
+    -webkit-flex-shrink: 0;
+    -ms-flex-negative: 0;
+    flex-shrink: 0;
+    z-index: 1;
+}
+
+.mdl-components__link-image {
+    display: inline-block;
+    margin: 0 10px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    /*background-color: #ddd;*/
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: auto 48px;
+    border-radius: 50%;
+    height: 46px;
+    width: 46px;
+}
+
+/* Remove text-decoration in drawer menu */
+.mdl-components__link{
+  text-decoration: none !important;
+}
+
+/* Drawer menu 2nd level item */
+.icon-meun-second-lv{
+  margin-left: 48px !important;
+}
+
+.mdl-components__nav{
+  height: 900px;
+}
+
+/* ------------------------------------------------------------ */
+/* index.html */
+.no-bottom-border{
+  border-bottom: none !important;
+}
+
+.right-icon{
+  float:right;
+}
+
+.mdl-color--primary{
+  background-color: transparent !important;
+}
+
+.custom-content-section{
+  margin-bottom: 0 !important;
+}
+
+.article-column{
+  padding: 10px
+}
+
+.article-heading{
+  height: 64px
+}
+
+/* ------------------------------------------------------------ */
+/* Style.html */
+/* Table */
+/* Table: force cell content wrap */
+.table_full_width {
+  width: 100% !important;
+  table-layout: fixed;
+}
+
+th, td {
+  text-align: left !important;
+  white-space:normal;
+  word-wrap: break-word;
+  /*word-break: break-all;*/
+}
+
+/* Table: control 1st column width */
+.firstCol {width: 15%;}
+
+/* Main content */
+/* Main content buttom padding override */
+.mdl-demo main > .mdl-layout__tab-panel {
+  padding-bottom: 48px;
+}
+
+/* card circle */
+.section__circle-container__circle{
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: auto 48px;
+    border-radius: 50%;
+    height: 46px;
+    width: 46px;  
+}
+
+/* ------------------------------------------------------------ */
+/* HAITLC Page */
+.center-ball-list {
+  padding: 8px !important;
+  margin-left: 0px !important;
+  margin-right: 0px !important;
+}
+
+.first-section-HAITLC{
+  margin-bottom: 10px !important;
+}
+
+.article-column-HAITLC{
+  padding: 15px
+}
+.article-title-HAITLC{
+  color:rgb(97, 97, 97) !important;
+  text-decoration: none !important;
+}
+
+.section__circle-HAITLC{
+  background-color: lightblue !important;
+}
+
+/* google-font: all pages require */
+/* ------------------------------------------------------------ */
+/* fallback */
+@font-face {
+  font-family: 'Material Icons';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Material Icons'), local('MaterialIcons-Regular'), url(../../lib/google.woff2) format('woff2');
+}
+
+.material-icons {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  -webkit-font-feature-settings: 'liga';
+  -webkit-font-smoothing: antialiased;
+}
+
