@@ -1,13 +1,18 @@
 
 /* Customization */
 
+/* ------------------------------------------------------------ */
+/* Common */
 /* Heading */
 .mdl-layout-title.mdl-layout__header-row a{
     color:rgb(255,255,255) !important;
     text-decoration: none !important;
 }
 
-
+/* Page */
+.mdl-layout__tab-panel {
+    padding-top: 20px !important;
+}
 
 /* Drawer Menu */
 /* Drawer Menu heading */
