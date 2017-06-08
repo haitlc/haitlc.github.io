@@ -127,44 +127,49 @@
                     <li>Animations</li>
                     <li>Multiple Column Layout</li>
                 </ul>  
-  
-
+             </div>
+            <div class="mdl-cell mdl-cell--12-col">
                 <h3 id="difference">What are difference between SASS, SCSS, LESS?</h3>
                 <p>They are CSS preprocessors, providing programming features like function,variable,mixins,etc, finally compile into lengthy CSS which is used by browser.<br>
                 Actually their differences are very small, all of them can provide most features.
                 </p>
-                <table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp table_full_width" >
-                    <thead>
-                        <th class="mdl-data-table__cell--non-numeric"></th>
-                        <th align="center">SASS</th>
-                        <th align="center">SCSS</th>
-                        <th align="center">LESS</th>
-                    </thead>
-                    <tody>
-                        <tr>
-                            <td class="mdl-data-table__cell--non-numeric">History</td>
-                            <td>Built on 2007. Coded in Ruby<br>
-                            <td>Extend from SASS</td>
-                            <td>Built on 2009. Coded in JavaScript</td>
-                        </tr>	
-                        <tr>
-                            <td class="mdl-data-table__cell--non-numeric">Syntax</td>
-                            <td>Indented syntax, like Ruby and Python</td>
-                            <td>>CSS-like syntax. <br>
-                            Use brace{} to denote code block and semicolons; to separate lines</td>
-                            <td>CSS-like syntax.</td>
-                        </tr>
-                        <tr>
-                            <td class="mdl-data-table__cell--non-numeric">Feature</td>
-                            <td>First to support selector inheritance<br>High learning curve to setup Ruby and syntax<br>Compile to css by Ruby</td>
-                            <td>Same as SASS but low learning curve in syntax</td>
-                            <td>Variable, nesting, mixin, functions and selector inheritance<br>Low learning curve<br>Real-time compilation by JavaScript (include less.js after .less)</td>
-                        </tr>
-                    </tody>
-                </table> 
 
-             <h3 id="example">Example</h3>
+                <!-- wrap table so it can be scrollable -->
+                <div class="search-table-outter">
+                  <table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp table_full_width" >
+                      <thead>
+                          <th class="mdl-data-table__cell--non-numeric"></th>
+                          <th align="center">SASS</th>
+                          <th align="center">SCSS</th>
+                          <th align="center">LESS</th>
+                      </thead>
+                      <tody>
+                          <tr>
+                              <td class="mdl-data-table__cell--non-numeric">History</td>
+                              <td>Built on 2007. Coded in Ruby<br>
+                              <td>Extend from SASS</td>
+                              <td>Built on 2009. Coded in JavaScript</td>
+                          </tr>	
+                          <tr>
+                              <td class="mdl-data-table__cell--non-numeric">Syntax</td>
+                              <td>Indented syntax, like Ruby and Python</td>
+                              <td>>CSS-like syntax. <br>
+                              Use brace{} to denote code block and semicolons; to separate lines</td>
+                              <td>CSS-like syntax.</td>
+                          </tr>
+                          <tr>
+                              <td class="mdl-data-table__cell--non-numeric">Feature</td>
+                              <td>First to support selector inheritance<br>High learning curve to setup Ruby and syntax<br>Compile to css by Ruby</td>
+                              <td>Same as SASS but low learning curve in syntax</td>
+                              <td>Variable, nesting, mixin, functions and selector inheritance<br>Low learning curve<br>Real-time compilation by JavaScript (include less.js after .less)</td>
+                          </tr>
+                      </tody>
+                  </table> 
+                </div>
 
+            <h3 id="example">Example</h3>
+            <!-- wrap table so it can be scrollable -->
+            <div class="search-table-outter">
             <table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp table_full_width" >
             <thead>
                 <tr>
@@ -222,7 +227,7 @@ nav {
 			</td>
 		</tr>
 		<tr>
-			<td class="mdl-data-table__cell--non-numeric firstCol">Mixin</td>
+			<td class="mdl-data-table__cell--non-numeric firstCol ">Mixin</td>
 			<td>
 <pre class="prettyprint">
 =error($borderWidth: 2px, $color: #F00)
@@ -237,7 +242,7 @@ nav {
 			</td>
 			<td>
 <pre class="prettyprint">
-@mixin error($borderWidth: 2px, $color: #F00) {
+@mixin error($borderWidth:2px, $color:#F00){
   border: $borderWidth solid $color;
   color: $color;
 }
@@ -306,7 +311,7 @@ nav {
 		</tr>
             </tbody>
             </table>
-
+            </div>
 
              </div>
           </section>
@@ -314,7 +319,7 @@ nav {
 <!-- END Main Content-->
 
        <!-- seoncd tab -->
-        <div class="mdl-layout__tab-panel" id="difference-tab">
+        <!--<div class="mdl-layout__tab-panel" id="difference-tab">
           <section class="section--center mdl-grid mdl-grid--no-spacing">
             <div class="mdl-cell mdl-cell--12-col">
                 <h3>What are difference between SASS, SCSS, LESS?</h3>
@@ -352,204 +357,11 @@ nav {
                 </table>               
             </div>
           </section>
-        </div>
+        </div>-->
         <!-- END seoncd tab -->
-
-       <!-- third tab -->
-        <div class="mdl-layout__tab-panel" id="example-tab">
-          <section class="section--center mdl-grid mdl-grid--no-spacing">
-            <div class="mdl-cell mdl-cell--12-col">
-              <h3>Example</h3>
-
-            <table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp table_full_width" >
-            <thead>
-                <tr>
-                <th class="mdl-data-table__cell--non-numeric firstCol"></th>
-                <th>SASS</th>
-                <th>SCSS</th>
-                </tr>
-            </thead>
-            <tbody>
-		<tr>
-			<td class="mdl-data-table__cell--non-numeric firstCol">Variable</td>
-			<td>
-<pre class="prettyprint">
-$color: #FFF
-body 
-  color: $color</pre>
-			</td>
-			<td>
-<pre class="prettyprint">
-$color: #FFF;
-body {
-  color: $color;
-}</pre>
-			</td>
-		</tr>
-		<tr>
-			<td class="mdl-data-table__cell--non-numeric firstCol">Nesting</td>
-			<td>
-<pre class="prettyprint">
-nav
-  ul
-    margin: 0
-    padding: 0
-  li
-    display: inline-block
-    a
-      display: block
-      text-decoration: none</pre>
-			</td>
-			<td>
-<pre class="prettyprint">
-nav {
-  ul {
-    margin: 0;
-    padding: 0;
-  }
-  li { 
-    display: inline-block; 
-    a {
-      display: block;
-      text-decoration: none;
-    }
-  }
-}</pre>
-			</td>
-		</tr>
-		<tr>
-			<td class="mdl-data-table__cell--non-numeric firstCol">Mixin</td>
-			<td>
-<pre class="prettyprint">
-=error($borderWidth: 2px, $color: #F00)
-  border: $borderWidth solid $color
-  color: $color
-
-.default-error
-  +error()
-
-.custom-error
-  +error(5px, #F11)</pre>
-			</td>
-			<td>
-<pre class="prettyprint">
-@mixin error($borderWidth: 2px, $color: #F00) {
-  border: $borderWidth solid $color;
-  color: $color;
-}
-.default-error{
-  @include error()
-}
-.custom-error{
-  @include error(5px, #F11)
-}</pre>
-			</td>
-		</tr>
-		<tr>
-		<td class="mdl-data-table__cell--non-numeric firstCol">Inheritance</td>
-			<td>
-<pre class="prettyprint">
-.message
-  border: 1px solid #ccc
-  padding: 10px
-  color: #333
-
-.success
-  @extend .message
-  border-color: green
-
-.error
-  @extend .message
-  border-color: red
-
-.warning
-  @extend .message
-  border-color: yellow </pre>
-			</td>
-			<td>
-<pre class="prettyprint">
-.message {
-  border: 1px solid #ccc;
-  padding: 10px;
-  color: #333;
-}
-.success {
-  @extend .message;
-  border-color: green;
-}
-.error {
-  @extend .message;
-  border-color: red;
-}
-.warning {
-  @extend .message;
-  border-color: yellow;
-}</pre>
-			</td>
-		</tr>
-		<tr>
-		<td class="mdl-data-table__cell--non-numeric firstCol">Import</td>
-			<td>
-<pre class="prettyprint">
-// import xxx.sass
-@import  xxx</pre>
-			</td>
-			<td>
-<pre class="prettyprint">
-// import xxx.scss
-@import 'xxx';</pre>
-			</td>
-		</tr>
-            </tbody>
-            </table>
-            </div>
-          </section>
-        </div>
-        <!-- END third tab -->        
 
          <!-- footer area-->
         <footer class="mdl-mega-footer">
-          <div class="mdl-mega-footer--middle-section">
-            <div class="mdl-mega-footer--drop-down-section">
-              <input class="mdl-mega-footer--heading-checkbox" type="checkbox" checked>
-              <h1 class="mdl-mega-footer--heading">Features</h1>
-              <ul class="mdl-mega-footer--link-list">
-                <li><a href="#">About</a></li>
-                <li><a href="#">Terms</a></li>
-                <li><a href="#">Partners</a></li>
-                <li><a href="#">Updates</a></li>
-              </ul>
-            </div>
-            <div class="mdl-mega-footer--drop-down-section">
-              <input class="mdl-mega-footer--heading-checkbox" type="checkbox" checked>
-              <h1 class="mdl-mega-footer--heading">Details</h1>
-              <ul class="mdl-mega-footer--link-list">
-                <li><a href="#">Spec</a></li>
-                <li><a href="#">Tools</a></li>
-                <li><a href="#">Resources</a></li>
-              </ul>
-            </div>
-            <div class="mdl-mega-footer--drop-down-section">
-              <input class="mdl-mega-footer--heading-checkbox" type="checkbox" checked>
-              <h1 class="mdl-mega-footer--heading">Technology</h1>
-              <ul class="mdl-mega-footer--link-list">
-                <li><a href="#">How it works</a></li>
-                <li><a href="#">Patterns</a></li>
-                <li><a href="#">Usage</a></li>
-                <li><a href="#">Products</a></li>
-                <li><a href="#">Contracts</a></li>
-              </ul>
-            </div>
-            <div class="mdl-mega-footer--drop-down-section">
-              <input class="mdl-mega-footer--heading-checkbox" type="checkbox" checked>
-              <h1 class="mdl-mega-footer--heading">FAQ</h1>
-              <ul class="mdl-mega-footer--link-list">
-                <li><a href="#">Questions</a></li>
-                <li><a href="#">Answers</a></li>
-                <li><a href="#">Contact us</a></li>
-              </ul>
-            </div>
-          </div>
           <div class="mdl-mega-footer--bottom-section">
             <div class="mdl-logo">
               More Information

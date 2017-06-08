@@ -148,6 +148,20 @@ th, td {
 /* Table: control 1st column width */
 .firstCol {width: 15%;}
 
+/* responsive table */
+@media screen and (min-device-width: 361px) and (max-device-width: 765px) { 
+    /* STYLES HERE */
+  .table_full_width {
+    min-width: 750px !important;
+    table-layout: fixed;
+  }
+
+  .search-table-outter { overflow-x: scroll; }
+      
+}
+
+
+
 /* Main content */
 /* Main content buttom padding override */
 .mdl-demo main > .mdl-layout__tab-panel {
