@@ -1,0 +1,6 @@
+@import "../../node_modules/react-datepicker/dist/react-datepicker.css";
+@import "../../node_modules/react-date-picker/index.css";
+
+.mainTab {
+  padding: 30px 15px 15px
+}
