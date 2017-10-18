@@ -1,0 +1,202 @@
+<html>
+	<head>
+		<!--<script src="//unpkg.com/vue@2.3.3"></script>-->
+		<!--<script src="./lib/vue/2.0/vue.js"></script>-->
+		<!--<script src="./lib/jquery/jquery-3.1.1.js"></script>-->
+
+
+		<!-- Add this to <head> -->
+		<link type="text/css" rel="stylesheet" href="./lib/bootstrap-vue/bootstrap.min.css"/>
+		<link type="text/css" rel="stylesheet" href="./lib/bootstrap-vue/bootstrap-vue.css"/>
+
+		<!-- Add this after vue.js -->
+		<!--<script src="//unpkg.com/babel-polyfill@latest/dist/polyfill.min.js"></script>
+		<script src="//unpkg.com/tether@latest/dist/js/tether.min.js"></script>
+		<script src="//unpkg.com/bootstrap-vue@latest/dist/bootstrap-vue.js"></script>-->
+
+
+	</head>
+<body>
+
+
+
+
+	<div id="table">
+		
+		<div>
+			<!-- Tabs with card integration -->
+			<b-card no-block>
+				<b-tabs small card ref="tabs" v-model="tabIndex" >
+
+					<b-tab title="Data Table">
+							<!-- grid/table -->
+							<detail-grid 
+								v-on:gotoeditform="goToEditForm"
+								v-bind:columns="columns" 
+								v-bind:data="tableData">
+							</detail-grid>
+					</b-tab>
+					<b-tab title="Data Grid">
+
+							<!-- image grid -->
+							<image-grid 
+								v-bind:columns="columns" 
+								v-bind:data="tableData">
+							</image-grid>		
+							
+					</b-tab>
+					<b-tab title="Edit Form">
+						<new-form
+							v-on:modifyitem="updateItem"
+							v-bind:propsdata1="editBook">
+						</new-form>
+					</b-tab>
+					<b-tab title="New Inputs">
+						<new-form
+							v-on:modifyitem="addItemInModal"
+							v-bind:propsdata1="newBook">
+						</new-form>
+					</b-tab>			
+				</b-tabs>
+			</b-card>				
+		</div>
+	</div>
+
+<!-- template for the form component -->
+<script type="text/x-template" id="form-template">
+	<div>
+					<!-- Inputfield -->
+					<b>ID:</b><br>
+					<b-form-input id="id" v-model="book.id"></b-form-input><br>
+					<b>Title:</b><br>
+					<b-form-input id="title" v-model="book.title"></b-form-input><br>
+					<b>Author:</b><br>
+					<b-form-input id="author" v-model="book.author"></b-form-input><br>
+					<b>Rating:</b><br>
+					<b-form-input id="rating" v-model="book.rating"></b-form-input><br>
+					<b>Cover:</b><br>
+					<b-form-input id="cover" v-model="book.cover"></b-form-input><br>
+
+					<!-- datepicker -->
+					<b>Datepicker:</b><br>
+					<datepicker v-model="book.date"   name="uniquename"></datepicker><br>
+
+					<!-- dropdown -->
+					<b>Dropdown:</b><br>		
+					<b-form-select v-model="book.selected" 
+												 v-bind:options="dropdownoptions"
+					></b-form-select><br><br>
+
+					<!-- radio buttons -->
+					<b>Radio:</b><br>
+					<b-form-radio v-model="book.radio" v-bind:options="radiooptions" >One</b-form-radio><br>			
+					
+					<!-- checkbox -->
+					<b>Checkbox:</b><br>
+					<input type="checkbox" id="jack" value="1" v-model="book.checkbox1">
+					<label for="jack">1</label>
+					<input type="checkbox" id="john" value="2" v-model="book.checkbox2">
+					<label for="john">2</label>
+					<input type="checkbox" id="mike" value="3" v-model="book.checkbox3">
+					<label for="mike">3</label>					
+					<br><br>
+
+
+
+					<b-button variant="primary" v-on:click="modifyItemEvents">Save</b-button>
+					<br/>
+
+	</div>
+</script>
+
+
+
+<!-- template for the modal component -->
+<script type="text/x-template" id="modal-template">
+  <transition name="modal">
+    <div class="modal-mask">
+      <div class="modal-wrapper">
+        <div class="modal-container">
+          <div class="modal-header">
+            <slot name="header">
+              Update
+            </slot>
+          </div>
+          <div class="modal-body">
+            <slot name="body">
+							id:<br>
+							<input id="id" v-model="data.id"></input><br>
+							title:<br>
+							<input id="title" v-model="data.title"></input><br>
+							author:<br>
+							<input id="author" v-model="data.author"></input><br>
+							rating:<br>
+							<input id="rating" v-model="data.rating"></input><br>
+							cover:<br>
+							<input id="cover" v-model="data.cover"></input><br>
+							<button v-on:click="addItemEvents">add</button>
+							<br/>
+            </slot>
+          </div>
+          <div class="modal-footer">
+            <slot name="footer">           
+              <button class="modal-default-button" @click="$emit('close')">
+                Close
+              </button>
+            </slot>
+          </div>
+        </div>
+      </div>
+    </div>
+  </transition>
+</script>
+
+
+<!-- template for detail-grid component-->
+<script type="text/x-template" id="table-template">
+
+	  <table class="table table-bordered table-striped table-hover table-condensed" id="detail-grid" >
+			<thead>
+				<tr>
+				<th v-for="key in columns">{{key}}</th>
+				<th></th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr v-for="(row, index) in data">
+				<td  v-for="key in columns">
+					{{row[key]}}
+				</td>
+				<td>
+					<b-button variant="primary" v-on:click="goToEditForm" :id="index">Update</b-button>
+				</td>				
+				</tr>
+			</tbody>
+	  </table>
+</script>	
+
+
+<!-- template for image grid component-->
+<script type="text/x-template" id="image-grid-template">
+		<ul id="rig">
+			<li v-for="row in data">
+				<a class="rig-cell" href="#">
+					<img class="rig-img" v-bind:src="row['cover']"  />
+					<span class="rig-overlay"></span>
+					<span class="rig-text">{{row["title"]}}</span>
+				</a>          
+			</li>
+		</ul>
+</script>	
+
+
+<script src="./dist/build.js"></script>
+<link rel="stylesheet" type="text/css" href="./style/grid.css">
+
+</body>
+</html>
+
+
+
+
+

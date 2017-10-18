@@ -1,0 +1,61 @@
+[{
+		"id" : 1,
+		"title" : "The Hunger Games",
+		"author" : "Suzanne Collins",
+		"rating" : "4.35",
+		"cover" : "http://images.gr-assets.com/books/1447303603l/2767052.jpg"
+	}, {
+		"id" : 2,
+		"title" : "Harry Potter",
+		"author" : "J.K. Rowling",
+		"rating" : "4.46",
+		"cover" : "https://images.gr-assets.com/books/1387141547l/2.jpg"
+	}, {
+		"id" : 3,
+		"title" : "To Kill a Mockingbird",
+		"author" : "Harper Lee",
+		"rating" : "4.25",
+		"cover" : "http://images.gr-assets.com/books/1361975680l/2657.jpg"
+	}, {
+		"id" : 4,
+		"title" : "Pride and Prejudice",
+		"author" : " Jane Austen",
+		"rating" : "4.24",
+		"cover" : "http://images.gr-assets.com/books/1320399351l/1885.jpg"
+	}, {
+		"id" : 5,
+		"title" : "The Chronicles of Narnia",
+		"author" : "C.S. Lewis",
+		"rating" : "4.24",
+		"cover" : "https://images.gr-assets.com/books/1449868701l/11127.jpg"
+	}, {
+		"id" : 6,
+		"title" : "Twilight",
+		"author" : "Stephenie Meyer",
+		"rating" : "3.57",
+		"cover" : "http://images.gr-assets.com/books/1361039443l/41865.jpg"
+	}, {
+		"id" : 7,
+		"title" : "The Book Thief",
+		"author" : "Markus Zusak",
+		"rating" : "4.36",
+		"cover" : "https://images.gr-assets.com/books/1390053681l/19063.jpg"
+	}, {
+		"id" : 8,
+		"title" : "Animal Farm",
+		"author" : "George Orwell",
+		"rating" : "3.86",
+		"cover" : "https://images.gr-assets.com/books/1424037542l/7613.jpg"
+	}, {
+		"id" : 9,
+		"title" : "Gone with the Wind",
+		"author" : "Margaret Mitchell",
+		"rating" : "4.28",
+		"cover" : "https://images.gr-assets.com/books/1328025229l/18405.jpg"
+	}, {
+		"id" : 10,
+		"title" : "The Giving Tree ",
+		"author" : "Shel Silverstein",
+		"rating" : "4.38",
+		"cover" : "https://images.gr-assets.com/books/1174210942l/370493.jpg"
+}]
