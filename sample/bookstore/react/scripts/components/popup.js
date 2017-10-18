@@ -1,6 +1,6 @@
 import React from 'react';
 import SkyLight from 'react-skylight';
-import FormAction from '../containers/formAction';
+// import FormAction from '../containers/formAction';
 
 
 class Popup extends React.Component {
@@ -23,7 +23,7 @@ class Popup extends React.Component {
           <button onClick={() => this.refs.simpleDialog.show()}>add new record</button>
         </section>
         <SkyLight hideOnOverlayClicked ref="simpleDialog" title="Update Form">
-          <FormAction closeModal={this.closeModalHandler}/>
+          {/* <FormAction closeModal={this.closeModalHandler}/> */}
         </SkyLight>
       </div>
     )

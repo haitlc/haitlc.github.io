@@ -93,12 +93,12 @@ Vue.component('image-grid', {
 })
 
 
-
+// main controller?
 var app = new Vue({
   el: '#table',
   data: {
-    columns: ['id', 'title', 'author', 'rating', 'cover'],
-		tabIndex: null,
+    columns: ['ID', 'Title', 'Author', 'Rating', 'Date'],
+	tabIndex: null,
     tableData: [],
 		editBook: {},		
 		newBook: {
@@ -133,14 +133,14 @@ var app = new Vue({
 			console.log(this.tableData)
 		},
 
-    addItemInModal: function(data){
-			//push new record to existing table data
-			this.tableData.push(data)
-			//go back to detail grid
-			this.tabIndex=0;				
-			//increment ID
-			this.newBook = Object.assign({}, this.newBook, Object.assign({id: this.tableData.length+1}));	
-    },
+		addItemInModal: function(data){
+				//push new record to existing table data
+				this.tableData.push(data)
+				//go back to detail grid
+				this.tabIndex=0;				
+				//increment ID
+				this.newBook = Object.assign({}, this.newBook, Object.assign({id: this.tableData.length+1}));	
+		},
 
 		updateItem: function(data){
 			//go back to detail grid

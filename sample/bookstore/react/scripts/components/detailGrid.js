@@ -5,11 +5,17 @@ import {Table, striped, bordered, condensed, hover, responsive, Button} from 're
 class TableRow extends React.Component{
     constructor(props){
         super(props);
-        this.updateRec = this.updateRec.bind(this)
     }    
 
     updateRec(event){
         this.props.updateRecInDetailGrid(event) //it is now getting button 
+    }
+
+    convertDateFormat(dateString){
+        var monthNames   = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];        
+        var parsedDate   = new Date(dateString);
+        var outputString = parsedDate.getDate()+"-"+monthNames[parsedDate.getMonth()]+"-"+parsedDate.getFullYear();
+        return outputString;
     }
 
     render() {
@@ -17,13 +23,13 @@ class TableRow extends React.Component{
         var counter = 0
         this.props.bookContent.forEach((listValue) => {
             rows.push(                
-                <tr key={counter}>
-                    <td>{listValue.id}</td>
-                    <td>{listValue.title}</td>
-                    <td>{listValue.author}</td>
-                    <td>{listValue.rating}</td>
-                    <td>{listValue.date}</td>
-                    <td> <Button onClick={this.updateRec} id={counter++} bsStyle="primary">Update</Button></td>
+                <tr onDoubleClick={this.updateRec.bind(this)} id={counter} key={counter}>
+                    <td id={counter}>{listValue.id}</td>
+                    <td id={counter}>{listValue.title}</td>
+                    <td id={counter}>{listValue.author}</td>
+                    <td id={counter}>{listValue.rating}/100</td>
+                    <td id={counter++}>{this.convertDateFormat(listValue.date)}</td>
+                    {/* <td> <Button onClick={this.updateRec.bind(this)} id={counter++} bsStyle="primary">Update</Button></td> */}
                 </tr>)
         })
 		return(
@@ -33,47 +39,34 @@ class TableRow extends React.Component{
 }
 
 class TableHeadRow extends React.Component{
-	capitalizeFirstLetter(string) {return string.charAt(0).toUpperCase() + string.slice(1);}
-    pushTableHeadRow(rows, headerKeys){
-        var counter=0;
-        headerKeys.forEach(function(key) {
-            console.log(key)
-            if(key=="cover"||key=="dropDown"||key=="radio"||key=="checkbox1"||key=="checkbox2"||key=="checkbox3"){return}
-            rows.push(<td key={counter++}>{this.capitalizeFirstLetter(key)}</td>)
-        }, this);
-        rows.push(<td key={counter++}></td>) 
-        return rows    
-    }
     render() {
-        var rows = [];        
-        var headerKeys = Object.keys(this.props.bookRow)
-        rows = this.pushTableHeadRow(rows, headerKeys)
 		return(
-			<thead>
-                <tr>{rows}</tr>
-            </thead>
-		)
+        <thead>
+            <tr>
+                <td>ID</td><td>Title</td><td>Author</td><td>Rating</td><td>Date</td>
+                {/* <td></td> */}
+            </tr>       
+        </thead>)
 	}	
 }
 
 class DetailGrid extends React.Component{
     constructor(props){
         super(props);
-        this.updateRec = this.updateRec.bind(this)
     }    
 
     updateRec(event){
         this.props.updateRecInTableAll(event.target)
     }
 
-  render(){
-    return (
-        <Table striped condensed hover bordered>
-            <TableHeadRow bookRow={this.props.bookContent[0]} />
-            <TableRow bookContent={this.props.bookContent} updateRecInDetailGrid={this.updateRec}/>
-        </Table>
-    )
-  }
+    render(){
+        return (
+            <Table striped condensed hover bordered>
+                <TableHeadRow bookRow={this.props.bookContent[0]} />
+                <TableRow bookContent={this.props.bookContent} updateRecInDetailGrid={this.updateRec.bind(this)}/>
+            </Table>
+        )
+    }
 }
 
 

@@ -20245,15 +20245,15 @@ _vue2.default.component('image-grid', {
 var app = new _vue2.default({
 	el: '#table',
 	data: {
-		columns: ['id', 'title', 'author', 'rating', 'cover'],
+		columns: ['ID', 'Title', 'Author', 'Rating', 'Date'],
 		tabIndex: null,
 		tableData: [],
 		editBook: {},
 		newBook: {
-			id: 11,
-			title: 'The Wealth of Nations',
-			author: 'Adam Smith',
-			rating: 5,
+			ID: 11,
+			Title: 'The Wealth of Nations',
+			Author: 'Adam Smith',
+			Rating: 5,
 			cover: 'https://images-na.ssl-images-amazon.com/images/I/71dsU1pQbiL.jpg'
 		},
 		showModal: false,

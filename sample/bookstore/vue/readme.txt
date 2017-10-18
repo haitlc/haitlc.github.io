@@ -1,0 +1,1 @@
+orginal source: C:\Users\chw502.CORP\Desktop\Testing_ground\nodejs\newsletter\framework\vue\bookstore

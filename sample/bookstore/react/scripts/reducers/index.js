@@ -58,7 +58,8 @@ export default (state={
         //1.jump to tab 3 
         //2.prepare editingBok  (parse date to MM/DD/YYYY & select book)
         let tabActiveKey = action.tabActiveKey
-        let tempEditingBook = Object.assign({}, state.books[action.columnIndex])        
+        let tempEditingBook = Object.assign({}, state.books[action.columnIndex])
+        console.log(tempEditingBook.date)        
         tempEditingBook.date = parseDisplayDateToCalanderDate(tempEditingBook.date)
         return Object.assign({}, state, 
             {editingBook: tempEditingBook},
@@ -158,7 +159,7 @@ export default (state={
 }
 
 function parseDisplayDateToCalanderDate(inputDate){
-        var parts = inputDate.split('/');
+        var parts  = inputDate.split('/');
         var mydate = new Date(parts[2],parts[0]-1,parts[1]);  
         return mydate.toISOString()
 }

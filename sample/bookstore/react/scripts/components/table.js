@@ -1,17 +1,16 @@
 import React from 'react';
 import ImageGrid from './imageGrid';
 import DetailGrid from './detailGrid';
-import FormAction from '../containers/formAction';
-import EditFormAction from '../containers/editFormAction';
+import NewInputsContainer from '../containers/newInputsContainer';
+import EditFormContainer from '../containers/editFormContainer';
 import '../../styles/table.css';
-import { Nav, NavItem, NavDropdown, MenuItem, Tabs, Tab, TabContainer, Grid, Row, Col, Clearfix, Jumbotron, Button} from 'react-bootstrap';
+import { Nav, NavItem, NavDropdown, MenuItem, Tabs, Tab, TabContainer, 
+    Clearfix, Jumbotron, Button} from 'react-bootstrap';
 
 
 class TableAll extends React.Component{
     constructor(props){
         super(props);
-        this.handleSelect = this.handleSelect.bind(this)
-        this.updateRec = this.updateRec.bind(this)
     }
 
     componentDidMount(){
@@ -34,10 +33,10 @@ class TableAll extends React.Component{
         var counter=0;
         return (
 		<div className="mainTab">       
-            <Tabs bsStyle={'tabs'} activeKey={this.props.tabActiveKey} onSelect={this.handleSelect} id="controlled-tab-example" >
+            <Tabs bsStyle={'tabs'} activeKey={this.props.tabActiveKey} onSelect={this.handleSelect.bind(this)} id="controlled-tab-example" >
               <Tab eventKey={1} title="Data Table">  
                   <div className="mainTab">
-                    <DetailGrid bookContent={this.props.books} updateRecInTableAll={this.updateRec}/>       
+                    <DetailGrid bookContent={this.props.books} updateRecInTableAll={this.updateRec.bind(this)}/>       
                   </div>                
               </Tab>
               <Tab eventKey={2} title="Data Grid">                
@@ -46,23 +45,14 @@ class TableAll extends React.Component{
                 </div>                
               </Tab>
               <Tab eventKey={3} title="Edit Form">
-                <Grid className="mainTab">
-                  <Row className="show-grid">
-                    <Col sm={6} md={3}>
-                    <EditFormAction closeModal={() => {}}/>       
-                    </Col>
-                  </Row>              
-                </Grid>              
+                <div className="mainTab">  
+                    <EditFormContainer closeModal={() => {}}/>       
+                </div>              
               </Tab>              
               <Tab eventKey={4} title="New Inputs">
-                <Grid className="mainTab">
-                  <Row className="show-grid">
-                    <Col sm={6} md={3}>
-                    <FormAction closeModal={() => {}}/>
-                    </Col>
-                  </Row>              
-                </Grid>              
-                {/*<Popup inputUpdate={this.inputAddNewState}/>*/}
+                <div className="mainTab">
+                    <NewInputsContainer closeModal={() => {}}/>            
+                </div>              
               </Tab>
             </Tabs>                                      
 		</div>

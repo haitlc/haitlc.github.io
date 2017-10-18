@@ -1,17 +1,12 @@
 import React from 'react';
-import VisibleTable from '../containers/visibleTable'
+import TableContainer from '../containers/tableContainer'
 import Popup from './popup'
-
-
-
-
 
 class App extends React.Component{
     render(){
         return(
             <div>
-                <VisibleTable />
-                {/*<Popup />*/}
+                <TableContainer />
             </div>
         )
     }

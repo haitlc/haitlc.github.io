@@ -67,13 +67,13 @@
 	<div>
 					<!-- Inputfield -->
 					<b>ID:</b><br>
-					<b-form-input id="id" v-model="book.id"></b-form-input><br>
+					<b-form-input id="id" v-model="book.ID"></b-form-input><br>
 					<b>Title:</b><br>
-					<b-form-input id="title" v-model="book.title"></b-form-input><br>
+					<b-form-input id="title" v-model="book.Title"></b-form-input><br>
 					<b>Author:</b><br>
-					<b-form-input id="author" v-model="book.author"></b-form-input><br>
+					<b-form-input id="author" v-model="book.Author"></b-form-input><br>
 					<b>Rating:</b><br>
-					<b-form-input id="rating" v-model="book.rating"></b-form-input><br>
+					<b-form-input id="rating" v-model="book.Rating"></b-form-input><br>
 					<b>Cover:</b><br>
 					<b-form-input id="cover" v-model="book.cover"></b-form-input><br>
 
@@ -124,16 +124,16 @@
           </div>
           <div class="modal-body">
             <slot name="body">
-							id:<br>
-							<input id="id" v-model="data.id"></input><br>
-							title:<br>
-							<input id="title" v-model="data.title"></input><br>
-							author:<br>
-							<input id="author" v-model="data.author"></input><br>
-							rating:<br>
-							<input id="rating" v-model="data.rating"></input><br>
-							cover:<br>
-							<input id="cover" v-model="data.cover"></input><br>
+							ID:<br>
+							<input id="id" v-model="data.ID"></input><br>
+							Title:<br>
+							<input id="title" v-model="data.Title"></input><br>
+							Author:<br>
+							<input id="author" v-model="data.Author"></input><br>
+							Rating:<br>
+							<input id="rating" v-model="data.Rating"></input><br>
+							Published Date:<br>
+							<input id="cover" v-model="data.date"></input><br>
 							<button v-on:click="addItemEvents">add</button>
 							<br/>
             </slot>
@@ -159,17 +159,29 @@
 			<thead>
 				<tr>
 				<th v-for="key in columns">{{key}}</th>
-				<th></th>
+				<!--<th></th>-->
 				</tr>
 			</thead>
 			<tbody>
-				<tr v-for="(row, index) in data">
-				<td  v-for="key in columns">
-					{{row[key]}}
-				</td>
-				<td>
+				<tr v-on:dblclick="goToEditForm" :id="index" v-for="(row, index) in data">
+					<td>
+						{{row.ID}}
+					</td>
+					<td>
+						{{row.Title}}
+					</td>
+					<td>
+						{{row.Author}}
+					</td>
+					<td>
+						{{row.Rating}}/100
+					</td>
+					<td>
+						{{row.Date}}
+					</td>					
+ 				<!--<td>
 					<b-button variant="primary" v-on:click="goToEditForm" :id="index">Update</b-button>
-				</td>				
+				</td>	 -->			
 				</tr>
 			</tbody>
 	  </table>
